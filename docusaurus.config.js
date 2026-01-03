@@ -7,16 +7,16 @@ const config = {
   tagline: 'A simulation-first, hands-on textbook',
   favicon: 'img/favicon.ico',
 
-  // ✅ GitHub Pages config (CORRECT)
+  // GitHub Pages config
   url: 'https://sufyanali92.github.io',
   baseUrl: '/Book_HAKATHON/',
-  organizationName: 'sufyanali92',
-  projectName: 'Book_HAKATHON',
+  organizationName: 'sufyanali92', // GitHub username
+  projectName: 'Book_HAKATHON', // GitHub repo name
   deploymentBranch: 'gh-pages',
 
-  trailingSlash: true,
+  trailingSlash: false,
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -29,13 +29,13 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/', // ✅ Docs ARE the site
+          routeBasePath: '/', // Docs are the main site
           sidebarPath: './sidebars.js',
           editUrl:
             'https://github.com/sufyanali92/Book_HAKATHON/edit/main/',
         },
 
-        blog: false, // ❌ Blog disabled (book only)
+        blog: false, // Blog disabled
 
         theme: {
           customCss: './src/css/custom.css',
@@ -46,13 +46,13 @@ const config = {
 
   themeConfig: {
     navbar: {
-      title: '', // clean book-style UI
+      title: '', // optional: remove homepage title
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'tutorialSidebar', // your main sidebar
           position: 'left',
-          label: 'Book',
+          label: 'Book', // main landing page
         },
         {
           href: 'https://github.com/sufyanali92/Book_HAKATHON',
@@ -61,8 +61,7 @@ const config = {
         },
       ],
     },
-
-    footer: undefined, // ❌ No footer (textbook style)
+    footer: undefined, // Remove footer completely
 
     prism: {
       theme: prismThemes.github,
