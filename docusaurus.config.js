@@ -7,16 +7,16 @@ const config = {
   tagline: 'A simulation-first, hands-on textbook',
   favicon: 'img/favicon.ico',
 
-  // GitHub Pages config
-  url: 'https://your-username.github.io',
-  baseUrl: '/textbook-ai-robotics/',
-  organizationName: 'your-username',
-  projectName: 'textbook-ai-robotics',
+  // ✅ GitHub Pages config (CORRECT)
+  url: 'https://sufyanali92.github.io',
+  baseUrl: '/Book_HAKATHON/',
+  organizationName: 'sufyanali92',
+  projectName: 'Book_HAKATHON',
   deploymentBranch: 'gh-pages',
 
-  trailingSlash: false,
+  trailingSlash: true,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -29,13 +29,13 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/', // 👈 Docs ARE the site
+          routeBasePath: '/', // ✅ Docs ARE the site
           sidebarPath: './sidebars.js',
           editUrl:
-            'https://github.com/your-username/textbook-ai-robotics/edit/main/',
+            'https://github.com/sufyanali92/Book_HAKATHON/edit/main/',
         },
 
-        blog: false, // ❌ Blog disabled
+        blog: false, // ❌ Blog disabled (book only)
 
         theme: {
           customCss: './src/css/custom.css',
@@ -46,22 +46,23 @@ const config = {
 
   themeConfig: {
     navbar: {
-  title: '', // optional: remove homepage title
-  items: [
-    {
-      type: 'docSidebar',
-      sidebarId: 'tutorialSidebar', // your main sidebar
-      position: 'left',
-      label: 'Book', // this is the main landing page
+      title: '', // clean book-style UI
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Book',
+        },
+        {
+          href: 'https://github.com/sufyanali92/Book_HAKATHON',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
     },
-    {
-      href: 'https://github.com/your-username/textbook-ai-robotics',
-      label: 'GitHub',
-      position: 'right',
-    },
-  ],
-},
-    footer: undefined, // ❌ Remove footer completely
+
+    footer: undefined, // ❌ No footer (textbook style)
 
     prism: {
       theme: prismThemes.github,
