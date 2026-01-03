@@ -1,21 +1,15 @@
-// @ts-check
-import {themes as prismThemes} from 'prism-react-renderer';
-
-/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Physical AI and Humanoid Robots',
   tagline: 'A simulation-first, hands-on textbook',
   favicon: 'img/favicon.ico',
 
-  // GitHub Pages config
   url: 'https://sufyanali92.github.io',
-  baseUrl: '/Book_HAKATHON/',
+  baseUrl: '/book-_Hakathon/',
   organizationName: 'sufyanali92', // GitHub username
-  projectName: 'Book_HAKATHON', // GitHub repo name
+  projectName: 'book-_Hakathon',    // Corrected repo name
   deploymentBranch: 'gh-pages',
 
   trailingSlash: false,
-
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
@@ -29,13 +23,12 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/', // Docs are the main site
+          routeBasePath: '/',
           sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/sufyanali92/Book_HAKATHON/edit/main/',
+          editUrl:
+            'https://github.com/sufyanali92/book-_Hakathon/edit/main/',
         },
-
-        blog: false, // Blog disabled
-
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -45,27 +38,29 @@ const config = {
 
   themeConfig: {
     navbar: {
-      title: '', // optional: remove homepage title
+      title: '',
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar', // your main sidebar
+          sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Book', // main landing page
+          label: 'Book',
         },
         {
-          href: 'https://github.com/sufyanali92/Book_HAKATHON',
+          href: 'https://github.com/sufyanali92/book-_Hakathon',
           label: 'GitHub',
           position: 'right',
         },
       ],
     },
-
-    footer: undefined, // Remove footer completely to fix deployment issue
-
+    footer: {
+      style: 'dark',
+      links: [],
+      copyright: '© 2026 Sufyan Ali', // <-- must not be empty
+    },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: require('prism-react-renderer/themes/github'),
+      darkTheme: require('prism-react-renderer/themes/dracula'),
       additionalLanguages: ['python', 'bash', 'json', 'cpp'],
     },
   },
