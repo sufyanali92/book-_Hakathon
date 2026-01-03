@@ -5,23 +5,36 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'Physical AI and Humanoid Robots',
   tagline: 'A simulation-first, hands-on textbook',
-  favicon: 'img/favicon.ico',
+  favicon: '/img/favicon.ico',
 
-  // GitHub Pages config
+  // ✅ GitHub Pages deployment
   url: 'https://sufyanali92.github.io',
   baseUrl: '/Book_HAKATHON/',
-  organizationName: 'sufyanali92', // GitHub username
-  projectName: 'Book_HAKATHON', // GitHub repo name
+  organizationName: 'sufyanali92',
+  projectName: 'Book_HAKATHON',
   deploymentBranch: 'gh-pages',
 
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
+  onDuplicateRoutes: 'warn',
 
+  // ✅ i18n (minimal & valid)
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
+  },
+
+  // ✅ FIXED: markdown hooks (v3.9+ correct)
+  markdown: {
+    format: 'mdx',
+    mermaid: true,
+    emoji: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'throw',
+    },
   },
 
   presets: [
@@ -29,13 +42,13 @@ const config = {
       'classic',
       {
         docs: {
-          routeBasePath: '/', // Docs are the main site
+          routeBasePath: '/', // Docs act as homepage
           sidebarPath: './sidebars.js',
           editUrl:
             'https://github.com/sufyanali92/Book_HAKATHON/edit/main/',
         },
 
-        blog: false, // Blog disabled
+        blog: false,
 
         theme: {
           customCss: './src/css/custom.css',
@@ -46,13 +59,13 @@ const config = {
 
   themeConfig: {
     navbar: {
-      title: '', // optional: remove homepage title
+      title: '', // clean homepage
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar', // your main sidebar
+          sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Book', // main landing page
+          label: 'Book',
         },
         {
           href: 'https://github.com/sufyanali92/Book_HAKATHON',
@@ -61,7 +74,13 @@ const config = {
         },
       ],
     },
-    footer: undefined, // Remove footer completely
+
+    // ✅ Proper way to remove footer
+    footer: {
+      style: 'dark',
+      links: [],
+      copyright: '',
+    },
 
     prism: {
       theme: prismThemes.github,
