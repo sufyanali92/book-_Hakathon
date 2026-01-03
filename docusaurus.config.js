@@ -77,10 +77,11 @@ const config = {
 
     // ✅ Proper way to remove footer
     footer: {
-      style: 'dark',
-      links: [],
-      copyright: '',
-    },
+  style: 'dark',
+  links: [],
+  copyright: '',
+},
+
 
     prism: {
       theme: prismThemes.github,
