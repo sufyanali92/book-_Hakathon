@@ -1,3 +1,8 @@
+// @ts-check
+import lightCodeTheme from 'prism-react-renderer/themes/github';
+import darkCodeTheme from 'prism-react-renderer/themes/dracula';
+
+/** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Physical AI and Humanoid Robots',
   tagline: 'A simulation-first, hands-on textbook',
@@ -5,8 +10,8 @@ const config = {
 
   url: 'https://sufyanali92.github.io',
   baseUrl: '/book-_Hakathon/',
-  organizationName: 'sufyanali92', // GitHub username
-  projectName: 'book-_Hakathon',    // Corrected repo name
+  organizationName: 'sufyanali92',
+  projectName: 'book-_Hakathon',
   deploymentBranch: 'gh-pages',
 
   trailingSlash: false,
@@ -56,11 +61,11 @@ const config = {
     footer: {
       style: 'dark',
       links: [],
-      copyright: '© 2026 Sufyan Ali', // <-- must not be empty
+      copyright: '© 2026 Sufyan Ali',
     },
     prism: {
-      theme: require('prism-react-renderer/themes/github'),
-      darkTheme: require('prism-react-renderer/themes/dracula'),
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
       additionalLanguages: ['python', 'bash', 'json', 'cpp'],
     },
   },
